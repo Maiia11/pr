@@ -36,3 +36,10 @@ axios.get(`${baseUrl}`, {
     console.log(error);
 })
 
+function createMarkup(arr) {
+    return arr.map((id, author, avatar_url, review) =>
+)
+
+
+    
+}
