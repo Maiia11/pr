@@ -1,25 +1,11 @@
 import axios from 'axios';
-
-
-
-// // Discovery API (https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2)
-// // API_KEY = 'uHSLi07StIOlriMPxJGxUbSYsHDs6AFx';
-// // Потрібно відрендерити колекцію  івентів і реалізувати пагінацію за допомогою бібліотеки
-// // tui - pagination(https://www.npmjs.com/package/tui-pagination),
-// // Запити робимо використовуючи бібліотеку axios (https://www.npmjs.com/package/axios , https://axios-http.com/uk/docs/intro)
-// // і конструкції async\await; try\catch
-
-// const { default: axios } = require("axios");
-
-
-// import "./js/api"
-
-// import "./js/event"
-
-// import "./js/pagination"
-
-// import "./js/search.js"
-
+import Swiper from 'swiper';
+import { Navigation, Pagination, Keyboard } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/keyboard';
 
 const baseUrlReviews = "https://portfolio-js.b.goit.study/api/reviews";
 const container = document.querySelector(".swiper-wrapper");
@@ -58,15 +44,6 @@ function createMarkup(arr) {
 
 add()
 
-
-import Swiper from 'swiper';
-import { Navigation, Pagination, Keyboard } from 'swiper/modules';
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/keyboard';
-
 const swiper = new Swiper('.swiper', {
   // configure Swiper to use modules
  modules: [Navigation, Pagination, Keyboard],
@@ -80,3 +57,25 @@ const swiper = new Swiper('.swiper', {
   },
   
 });
+
+
+
+// // Discovery API (https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2)
+// // API_KEY = 'uHSLi07StIOlriMPxJGxUbSYsHDs6AFx';
+// // Потрібно відрендерити колекцію  івентів і реалізувати пагінацію за допомогою бібліотеки
+// // tui - pagination(https://www.npmjs.com/package/tui-pagination),
+// // Запити робимо використовуючи бібліотеку axios (https://www.npmjs.com/package/axios , https://axios-http.com/uk/docs/intro)
+// // і конструкції async\await; try\catch
+
+// const { default: axios } = require("axios");
+
+
+// import "./js/api"
+
+// import "./js/event"
+
+// import "./js/pagination"
+
+// import "./js/search.js"
+
+
