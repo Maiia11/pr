@@ -20,28 +20,38 @@ import axios from 'axios';
 // import "./js/search.js"
 
 
-const baseUrl = "https://portfolio-js.b.goit.study/api/reviews";
+const baseUrlReviews = "https://portfolio-js.b.goit.study/api/reviews";
+const container = document.querySelector(".reviews_cards");
 
-axios.get(`${baseUrl}`, {
+ export async function getApi() {
+    const { data } = await axios.get(`${baseUrlReviews}`, {
     headers: {
         Accept: "application/json"
     },
     method: "Get"
-})
-
-    .then(data => {
-    console.log(data);
     })
-.catch (error => {
-    console.log(error);
-})
-
-// function createMarkup(arr) {
-//     return arr.map((id, author, avatar_url, review) =>
-// )
-
+    return data;
 
     
+}
 
+function createMarkup(arr) {
+    return arr.map(({ id, author, avatar_url, review }) => `
+    <li class="card" data-id ="${id}">
+    <img class="card_img" src="${avatar_url}" alt="photo">
+    <h3 class="card_title">${author}</h3>
+    <p class="card_text">${review}</p> 
+    </li>
+    </ul>`)
+        .join("")
     
-// }
+}
+
+ async function add() {
+     const res = await getApi();
+     container.insertAdjacentHTML("beforeend", createMarkup(res));
+    
+}
+
+add()
+
