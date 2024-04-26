@@ -21,39 +21,62 @@ import axios from 'axios';
 // import "./js/search.js"
 
 
-// const baseUrlReviews = "https://portfolio-js.b.goit.study/api/reviews";
-// const container = document.querySelector(".swiper-wrapper");
+const baseUrlReviews = "https://portfolio-js.b.goit.study/api/reviews";
+const container = document.querySelector(".swiper-wrapper");
 
-//  export async function getApi() {
-//     const { data } = await axios.get(`${baseUrlReviews}`, {
-//     headers: {
-//         Accept: "application/json"
-//     },
-//     method: "Get"
-//     })
-//     return data;
+ export async function getApi() {
+    const { data } = await axios.get(`${baseUrlReviews}`, {
+    headers: {
+        Accept: "application/json"
+    },
+    method: "Get"
+    })
+    return data;
 
     
-// }
+}
 
-// function createMarkup(arr) {
-//     return arr.map(({ id, author, avatar_url, review }) => `
-//     <div class="swiper-slide">
-//     <li class="card" data-id ="${id}">
-//     <img class="card_img" src="${avatar_url}" alt="photo">
-//     <h3 class="card_title">${author}</h3>
-//     <p class="card_text">${review}</p> 
-//     </li>
-//     </div>
-//     `)
-//         .join("")
+function createMarkup(arr) {
+    return arr.map(({ id, author, avatar_url, review }) => `
+    <div class="swiper-slide">
+    <li class="card" data-id ="${id}">
+    <img class="card_img" src="${avatar_url}" alt="photo">
+    <h3 class="card_title">${author}</h3>
+    <p class="card_text">${review}</p> 
+    </li>
+    </div>
+    `)
+        .join("")
     
-// }
+}
 
-//  async function add() {
-//      const res = await getApi();
-//      container.insertAdjacentHTML("beforeend", createMarkup(res));
+ async function add() {
+     const res = await getApi();
+     container.insertAdjacentHTML("beforeend", createMarkup(res));
     
-// }
+}
 
-// add()
+add()
+
+
+import Swiper from 'swiper';
+import { Navigation, Pagination, Keyboard } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/keyboard';
+
+const swiper = new Swiper('.swiper', {
+  // configure Swiper to use modules
+ modules: [Navigation, Pagination, Keyboard],
+  navigation: {
+  nextEl: '.end',
+ prevEl: '.start',
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  
+});

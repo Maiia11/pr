@@ -23,12 +23,3 @@
 // // getEvents(1)
 
 
-import Swiper from 'swiper';
-import 'swiper/css';
-
-new Swiper('.swiper', {
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
