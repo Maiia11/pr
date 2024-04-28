@@ -55,7 +55,7 @@ function createMarkup(arr) {
 
 addCardsOnPage()
 
-const swiper = new Swiper('.reviews_swiper', {
+const swiper = new Swiper('.swiper', {
   // configure Swiper to use modules
  modules: [Navigation, Pagination, Keyboard, Mousewheel],
   navigation: {
