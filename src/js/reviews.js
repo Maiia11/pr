@@ -21,14 +21,18 @@ const list = document.querySelector(".swiper-wrapper");
 
 async function addCardsOnPage() {
     try {
-        const data = await getApi();
+        const dat = await getApi();
      list.insertAdjacentHTML("beforeend", createMarkup(data));
     }
     
     catch (error) {
-        iziToast.show({
-    title: 'Hey',
-    message: 'What would you like to add?'
+      iziToast.show({
+        message: 'Reviews Not Found',
+        backgroundColor: '#ed3b44',
+        messageColor: '#fafafa',
+        position: 'topRight',
+        timeout: 2000
+    
 });
         
     }
@@ -50,7 +54,7 @@ function createMarkup(arr) {
 
 addCardsOnPage()
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.reviews_swiper', {
   // configure Swiper to use modules
  modules: [Navigation, Pagination, Keyboard, Mousewheel],
   navigation: {
