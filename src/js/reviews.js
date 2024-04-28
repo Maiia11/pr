@@ -18,16 +18,17 @@ import "izitoast/dist/css/iziToast.min.css";
  
 
 const list = document.querySelector(".swiper-wrapper");
-
+const placeholderText = document.querySelector(".placeholder_text")
 async function addCardsOnPage() {
     try {
-        const dat = await getApi();
+        const data = await getApi();
      list.insertAdjacentHTML("beforeend", createMarkup(data));
     }
     
     catch (error) {
+      placeholderText.classList.replace("visually-hidden", "title_not_found");
       iziToast.show({
-        message: 'Reviews Not Found',
+        message: 'Reviews Not found',
         backgroundColor: '#ed3b44',
         messageColor: '#fafafa',
         position: 'topRight',
