@@ -42,13 +42,13 @@ async function addCardsOnPage() {
  
 function createMarkup(arr) {
   return arr.map(({ author, avatar_url, review }) => `
-    <ul class="swiper-slide slide-reviews">
+    <div class="swiper-slide slide-reviews">
     <li class="card">
     <img class="card_img" src="${avatar_url}" alt="photo"/>
     <h3 class="card_title">${author}</h3>
     <p class="card_text">${review}</p>
     </li>
-    </ul>
+    </div>
     `)
         .join("") 
 }
